@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Vivado_tasks/lab_task1_part_2/value_compare.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compare
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Vivado_tasks/lab_task1_part_2/value_compare_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module value_compare_tb

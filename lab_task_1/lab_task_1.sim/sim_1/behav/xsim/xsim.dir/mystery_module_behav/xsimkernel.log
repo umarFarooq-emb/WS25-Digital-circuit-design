@@ -1,0 +1,4 @@
+Running: xsim.dir/mystery_module_behav/xsimk.exe -simmode gui -wdb mystery_module_behav.wdb -simrunnum 0 -socket 55871
+Design successfully loaded
+Design Loading Memory Usage: 8424 KB (Peak: 8424 KB)
+Design Loading CPU Usage: 46 ms

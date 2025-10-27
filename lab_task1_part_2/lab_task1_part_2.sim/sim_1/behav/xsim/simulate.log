@@ -1,0 +1,5 @@
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+Fatal: Logic failed for both inputs at logical level '1'
+Time: 100 ns  Iteration: 0  Process: /value_compare_tb/Initial35_1  File: D:/Vivado_tasks/lab_task1_part_2/value_compare_tb.sv
+$finish called at time : 100 ns : File "D:/Vivado_tasks/lab_task1_part_2/value_compare_tb.sv" Line 78

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sat Oct 18 02:22:40 2025
+# Process ID: 8852
+# Current directory: D:/Vivado_tasks/lab_task1_part_2/synth_1
+# Command line: vivado.exe -log value_compare_tb.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source value_compare_tb.tcl
+# Log file: D:/Vivado_tasks/lab_task1_part_2/synth_1/value_compare_tb.vds
+# Journal file: D:/Vivado_tasks/lab_task1_part_2/synth_1\vivado.jou
+#-----------------------------------------------------------
+source value_compare_tb.tcl -notrace
