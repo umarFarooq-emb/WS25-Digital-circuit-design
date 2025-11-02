@@ -1,0 +1,13 @@
+0.6
+2019.1
+May 24 2019
+15:06:07
+C:/Users/hp/Downloads/Configurable_Pulse_generator/Configurable_Pulse_generator.sim/sim_1/behav/xsim/glbl.v,1558713910,verilog,,,,glbl,,,,,,,,
+C:/Users/hp/Downloads/Configurable_Pulse_generator/Configurable_Pulse_generator.srcs/sources_1/new/conf_pulse_generator.sv,1762042829,systemVerilog,,C:/Users/hp/Downloads/Configurable_Pulse_generator/Configurable_Pulse_generator.srcs/sources_1/new/cpg_top.sv,,conf_pulse_generator,,,,,,,,
+C:/Users/hp/Downloads/Configurable_Pulse_generator/Configurable_Pulse_generator.srcs/sources_1/new/conf_pulse_generator_tb.sv,1762050252,systemVerilog,,,,conf_pulse_generator_tb,,,,,,,,
+C:/Users/hp/Downloads/Configurable_Pulse_generator/Configurable_Pulse_generator.srcs/sources_1/new/cpg_top.sv,1762049832,systemVerilog,,C:/Users/hp/Downloads/Configurable_Pulse_generator/Configurable_Pulse_generator.srcs/sources_1/new/dff_12bit.sv,,cpg_top,,,,,,,,
+C:/Users/hp/Downloads/Configurable_Pulse_generator/Configurable_Pulse_generator.srcs/sources_1/new/dff_12bit.sv,1762048202,systemVerilog,,C:/Users/hp/Downloads/Configurable_Pulse_generator/Configurable_Pulse_generator.srcs/sources_1/new/dff_1bit.sv,,dff_12bit,,,,,,,,
+C:/Users/hp/Downloads/Configurable_Pulse_generator/Configurable_Pulse_generator.srcs/sources_1/new/dff_1bit.sv,1761903124,systemVerilog,,C:/Users/hp/Downloads/Configurable_Pulse_generator/Configurable_Pulse_generator.srcs/sources_1/new/high_time_count.sv,,dff_1bit,,,,,,,,
+C:/Users/hp/Downloads/Configurable_Pulse_generator/Configurable_Pulse_generator.srcs/sources_1/new/high_time_count.sv,1762049895,systemVerilog,,C:/Users/hp/Downloads/Configurable_Pulse_generator/Configurable_Pulse_generator.srcs/sources_1/new/up_counter.sv,,high_time_count,,,,,,,,
+C:/Users/hp/Downloads/Configurable_Pulse_generator/Configurable_Pulse_generator.srcs/sources_1/new/low_time_count.sv,1762047193,systemVerilog,,C:/Users/hp/Downloads/Configurable_Pulse_generator/Configurable_Pulse_generator.srcs/sources_1/new/up_counter.sv,,low_time_count,,,,,,,,
+C:/Users/hp/Downloads/Configurable_Pulse_generator/Configurable_Pulse_generator.srcs/sources_1/new/up_counter.sv,1761905671,systemVerilog,,C:/Users/hp/Downloads/Configurable_Pulse_generator/Configurable_Pulse_generator.srcs/sources_1/new/conf_pulse_generator_tb.sv,,up_counter,,,,,,,,

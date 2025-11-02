@@ -1,0 +1,18 @@
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+
+[OVERRIDE=1] Test 0: i_hightime=0x19a i_lowtime=0xe66
+
+[OVERRIDE=1] Test 1: i_hightime=0x4cd i_lowtime=0xb33
+
+[OVERRIDE=1] Test 2: i_hightime=0x800 i_lowtime=0x800
+
+[OVERRIDE=1] Test 3: i_hightime=0xb33 i_lowtime=0x4cd
+
+[OVERRIDE=1] Test 4: i_hightime=0xe66 i_lowtime=0x19a
+
+[OVERRIDE=0] Run 1 cycles=1 Test 0: i_hightime=0x19a i_lowtime=0xe66
+
+[OVERRIDE=0] Run 1 cycles=1 Test 1: i_hightime=0x4cd i_lowtime=0xb33
+
+[OVERRIDE=0] Run 1 cycles=1 Test 2: i_hightime=0x800 i_lowtime=0x800
