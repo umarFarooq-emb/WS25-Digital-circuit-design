@@ -96,7 +96,6 @@ module conf_pulse_generator_tb();
         #15;
         tb_rst = 1'b0;
 
-
         // 1) Keep override asserted for the first set of tests (i_override = 1)
         tb_override = 1'b1;
         tb_cycles = 6'd0; // ignored when override is asserted
@@ -114,7 +113,7 @@ module conf_pulse_generator_tb();
             tb_trigger = 1'b0;
 
             // Wait a few pulses to observe behaviour
-            wait_cycles = (tb_hightime + tb_lowtime) * 4; // observe ~3 pulses worth
+            wait_cycles = (tb_hightime + tb_lowtime) * 3; // observe ~3 pulses worth
             if (wait_cycles < 100) wait_cycles = 100; // minimum observation
             repeat (wait_cycles) @(posedge tb_clk);
         end

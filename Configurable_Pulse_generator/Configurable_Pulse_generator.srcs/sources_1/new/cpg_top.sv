@@ -31,16 +31,9 @@ module cpg_top(input logic clk,
                 output logic [11:0] measured_low_time,
                 output logic pulse_out
     );
-                // output logic [11:0] measured_pulse_count,
 
-    // logic [11:0] high_time_count;
-    // logic [11:0] low_time_count;
-    // logic [11:0] pulse_count;
     logic pulse_signal;
     
-    // assign measured_high_time = high_time_count;
-    // assign measured_low_time = low_time_count;
-    // assign measured_pulse_count = pulse_count;
     assign pulse_out = pulse_signal;
 
     // Instantiate the configurable pulse generator
@@ -60,17 +53,14 @@ module cpg_top(input logic clk,
         .pulse(pulse_signal),
         .clk(clk),
         .rst(rst),
-        .o_hightime(measured_high_time),
+        .o_hightime(measured_high_time)
+    );
+
+    // Instantiate the Pulse Off time Measurement Module
+        low_time_count ltc_inst (
+        .pulse(pulse_signal),
+        .clk(clk),
+        .rst(rst),
         .o_lowtime(measured_low_time)
     );
-        // .pulse_count(pulse_count)
-
-    // Instantiate the low time measurement module
-    // low_time_count ltc_inst (
-    //     .pulse(pulse_signal),
-    //     .clk(clk),
-    //     .rst(rst),
-    //     .o_lowtime(measured_low_time)
-    // );
-
 endmodule

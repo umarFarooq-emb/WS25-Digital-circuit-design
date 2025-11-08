@@ -50,8 +50,9 @@ module low_time_count(input logic pulse,
     );
 
     dff_12bit dff_12bit_inst (
-        .clk(edge_detect),
+        .clk(clk),
         .rst(rst),
+        .enable(edge_detect),
         .d(lowtime_counter),
         .q(o_lowtime)
     );

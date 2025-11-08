@@ -22,6 +22,7 @@
 
 module dff_12bit(input clk,
                   input rst,
+                  input enable,
                   input [11:0] d,
                   output logic [11:0] q
     );
@@ -29,7 +30,7 @@ module dff_12bit(input clk,
     always_ff @(posedge clk, posedge rst) begin
         if (rst) begin
             q <= 12'd0;
-        end else begin
+        end else if (enable) begin
             q <= d;
         end
     end
