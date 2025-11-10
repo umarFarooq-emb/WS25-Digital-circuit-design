@@ -24,7 +24,6 @@ module low_time_count(input logic pulse,
                       input logic clk,
                       input logic rst,
                       output logic [11:0] o_lowtime
-
     );
 
     logic delayed_pulse;

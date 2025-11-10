@@ -29,6 +29,7 @@ module cpg_top(input logic clk,
                 input logic [5:0] pulse_count_cfg,
                 output logic [11:0] measured_high_time,
                 output logic [11:0] measured_low_time,
+                output logic [11:0] measured_pulse_count,
                 output logic pulse_out
     );
 
@@ -48,12 +49,13 @@ module cpg_top(input logic clk,
         .o_pulse(pulse_signal)
     );
 
-    // Instantiate the Pulse On time Measurement Module
+    // Instantiate the Pulse On time Measurement Module, also the pulse counter
     high_time_count htc_inst (
         .pulse(pulse_signal),
         .clk(clk),
         .rst(rst),
-        .o_hightime(measured_high_time)
+        .o_hightime(measured_high_time),
+        .o_pulsecnt(measured_pulse_count)
     );
 
     // Instantiate the Pulse Off time Measurement Module

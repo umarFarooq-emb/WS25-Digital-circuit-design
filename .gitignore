@@ -1,0 +1,12 @@
+# Ignore everything (recursively)
+**
+
+# But keep this file
+!.gitignore
+
+# Allow Git to traverse directories (so exceptions below can match)
+!**/
+
+# Keep any directory whose name ends with ".srcs" and all its contents
+!**/*.srcs/
+!**/*.srcs/**

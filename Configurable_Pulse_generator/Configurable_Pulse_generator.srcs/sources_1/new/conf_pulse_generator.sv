@@ -38,7 +38,7 @@ module conf_pulse_generator(input logic [11:0] i_lowtime,
 
     state_t current_state, next_state;
     logic [11:0] counter;
-    logic [12:0] time_count;
+    logic [11:0] time_count;
     logic [11:0] cycles_count;
     
     // State Transition
@@ -46,7 +46,7 @@ module conf_pulse_generator(input logic [11:0] i_lowtime,
         if (i_rst) begin
             current_state <= IDLE;
             counter <= 12'd0;
-            cycles_count <= 12'd0;
+            // cycles_count <= 12'd0;
         end else begin
             current_state <= next_state;
             if (current_state == HIGH || current_state == LOW) begin
@@ -65,6 +65,7 @@ module conf_pulse_generator(input logic [11:0] i_lowtime,
             IDLE: begin
                 if (i_trigger && (i_override || cycles_count < i_cycles)) begin
                     next_state = HIGH;
+                    cycles_count = 12'd0;
                 end
             end
             HIGH: begin
@@ -77,7 +78,10 @@ module conf_pulse_generator(input logic [11:0] i_lowtime,
             end
             LOW: begin
                 if (counter >= i_lowtime) begin
-                    if (i_override || (cycles_count + 12'd1 < i_cycles)) begin
+                    if (i_override) begin
+                        next_state = HIGH;
+                        time_count = 12'd0;
+                    end else if (~i_override) begin
                         next_state = HIGH;
                         cycles_count = cycles_count + 12'd1;
                         time_count = 12'd0;
@@ -96,6 +100,8 @@ module conf_pulse_generator(input logic [11:0] i_lowtime,
         o_pulse = 1'b0;
         case (current_state)
             HIGH: o_pulse = 1'b1;
+            LOW: o_pulse = 1'b0;
+            IDLE: o_pulse = 1'b0;
             default: o_pulse = 1'b0;
         endcase
     end

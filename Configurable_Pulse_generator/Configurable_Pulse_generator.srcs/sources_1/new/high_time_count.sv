@@ -23,7 +23,8 @@
 module high_time_count(input logic pulse,
                     input logic clk,
                     input logic rst,
-                    output logic [11:0] o_hightime
+                    output logic [11:0] o_hightime,
+                    output logic [11:0] o_pulsecnt
     );
 
     logic delayed_pulse;
@@ -40,8 +41,14 @@ module high_time_count(input logic pulse,
     assign edge_detect = pulse & ~delayed_pulse;
     logic up_counter_rst;
     assign up_counter_rst = rst | edge_detect;
-    // this is wrong, need to use a counter to count the pulses with the input signal being a clock
-    // assign pulse_count = edge_detect;
+
+    // Instatiate the pulse counter
+    up_counter pulse_cnt(
+        .clk(clk),
+        .reset(rst),
+        .enable(edge_detect),
+        .count_out(o_pulsecnt)
+    );
     
     up_counter up_counter_inst (
         .clk(clk),
