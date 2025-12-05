@@ -187,7 +187,7 @@ module conf_pulse_generator_tb();
                 tb_trigger = 1'b0;
 
                 // Wait enough cycles for the requested number of pulses plus margin
-                wait_cycles = (tb_hightime + tb_lowtime) * (tb_cycles + 1) + 50;
+                wait_cycles = (tb_hightime + tb_lowtime) * (tb_cycles + 2) + 50;
                 if (wait_cycles < 100) wait_cycles = 100;
                 repeat (wait_cycles) @(posedge tb_clk);
             end
