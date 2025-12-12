@@ -44,28 +44,17 @@ module traffic_light_SM(
     } state_t;
 
     state_t current_state, next_state;
-    logic old_button;
-    logic button_trigger;
     logic button_sync;
+    logic previous_state;
     logic set_sig;
     logic [7:0] stime_reg;
-
-    // Create a flip-flop to detect the change in the button signal
-    always_ff @(posedge i_clk, posedge i_rst) begin
-        if (i_rst) begin
-            old_button <= 1'b0;
-        end else begin
-            old_button <= i_button;
-            button_trigger <= i_button & ~old_button; // Rising edge detection
-        end
-    end
-
 
     // State register
     always_ff @(posedge i_clk, posedge i_rst) begin
         if (i_rst) begin
             current_state <= S_RED;
         end else if (i_expired) begin
+            previous_state <= current_state;
             current_state <= next_state;
         end
     end
@@ -81,14 +70,14 @@ module traffic_light_SM(
         case (current_state)
             S_WALK: begin
                 if (i_expired) begin
-                    next_state = S_RED;
-                    stime_reg = 8'd120;
+                    next_state = S_YELLOW;
+                    stime_reg = 8'd5;
                     set_sig = 1'b1;
                 end
             end
             S_RED: begin
                 if (i_expired) begin    
-                    if (button_trigger) begin
+                    if (button_sync) begin
                         next_state = S_WALK;
                         button_sync = 1'b0;
                         stime_reg = 8'd30;
@@ -109,9 +98,15 @@ module traffic_light_SM(
             end
             S_YELLOW: begin
                 if (i_expired) begin
-                    next_state = S_RED;
-                    stime_reg = 8'd30;
-                    set_sig = 1'b1;
+                    if (previous_state == S_WALK) begin
+                        next_state = S_GREEN;
+                        stime_reg = 8'd120;
+                        set_sig = 1'b1;
+                    end else begin
+                        next_state = S_RED;
+                        stime_reg = 8'd30;
+                        set_sig = 1'b1;
+                    end
                 end
             end
             default: begin
